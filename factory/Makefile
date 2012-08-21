@@ -1,16 +1,16 @@
-operation:main.o operation.o operationFactory.o operationAdd.o operationSub.o operationMul.o operationDiv.o
-	g++ -o  operation main.o operation.o operationFactory.o operationAdd.o operationSub.o operationMul.o operationDiv.o
+leifeng:main.o leifeng.o iFactory.o volunteer.o underGraduate.o underGraduateFactory.o volunteerFactory.o
+	g++ -o  leifeng main.o leifeng.o iFactory.o volunteer.o underGraduate.o underGraduateFactory.o volunteerFactory.o
 main.o:main.cc
 	g++ -c -g main.cc
-operation.o:operation.cc operation.hh 
-	g++ -c -g operation.cc 
-operationFactory.o:operationFactory.cc operationFactory.hh 
-	g++ -c -g operationFactory.cc 
-operationAdd.o:operationAdd.cc operationAdd.hh
-	g++ -c -g operationAdd.cc 
-operationSub.o:operationSub.cc operationSub.hh
-	g++ -c -g operationSub.cc 
-operationMul.o:operationMul.cc operationMul.hh
-	g++ -c -g operationMul.cc 
-operationDiv.o:operationDiv.cc operationDiv.hh
-	g++ -c -g operationDiv.cc 
+leifeng.o:leifeng.cc leifeng.hh 
+	g++ -c -g leifeng.cc 
+iFactory.o:iFactory.cc iFactory.hh 
+	g++ -c -g iFactory.cc 
+volunteer.o:volunteer.cc volunteer.hh
+	g++ -c -g volunteer.cc 
+underGraduate.o:underGraduate.cc underGraduate.hh
+	g++ -c -g underGraduate.cc 
+underGraduateFactory.o:underGraduateFactory.cc underGraduateFactory.hh
+	g++ -c -g underGraduateFactory.cc 
+volunteerFactory.o:volunteerFactory.cc volunteerFactory.hh
+	g++ -c -g volunteerFactory.cc 

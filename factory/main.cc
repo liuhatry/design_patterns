@@ -1,21 +1,16 @@
 #include <iostream>
 #include <cstdio>
-#include "operation.hh"
-#include "operationFactory.hh"
-using namespace std;
+#include "leifeng.hh"
+#include "volunteerFactory.hh"
+#include "underGraduateFactory.hh"
+#include "iFactory.hh"
 int main(){
-	operation *op;
-	cout<<"Please input operation symbol!(+,-,*,/)"<<endl;
-	char os = getchar();
-	op = operationFactory::createOperation(os);
-	cout<<"Please input operation numA!"<<endl;
-	double numA;
-	cin>>numA;
-	op->setNumA(numA);
-	cout<<"Please input operation numB!"<<endl;
-	double numB;
-	cin>>numB;
-	op->setNumB(numB);
-	cout<<op->getResult()<<endl;
+	leifeng *xueleifeng;
+	iFactory *leifengFactory = new volunteerFactory();
+	xueleifeng = leifengFactory->createLeifeng();
+	xueleifeng->sweep();
+	delete xueleifeng;
+	delete leifengFactory;
+	iFactory *leifengFactory1  = new underGraduateFactory();
 	return 0;
 }
