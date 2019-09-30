@@ -1,13 +1,11 @@
-#include "singleton.hh"
-singleton * singleton::instance ;
-//garbo singleton::gb;
-singleton::singleton(){
-}
-singleton * singleton::getInstance(){
-	if (instance ==NULL)
-	{
-		instance = new singleton();
-	}
-	return instance;
+#include "singleton.h"
+
+singleton* singleton::instance;
+
+singleton* singleton::getInstance(){
+  if (!instance) {
+    instance = new singleton();
+  }
+  return instance;
 }
 
