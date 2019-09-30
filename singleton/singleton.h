@@ -1,22 +1,18 @@
 #include <iostream>
-
-using namespace std;
+#include <memory>
+#include <mutex>
 
 class singleton {
  public:
-  static singleton* getInstance();
+  using Ptr = std::shared_ptr<singleton>;
+  static Ptr getInstance();
 
  private:
-  static singleton* instance;
-  singleton() {}
+  singleton() {
+    std::cout << "constructor called!" << std::endl;
+  }
 
-  class garbo {
-   public:
-    ~garbo() {
-      if (singleton::instance) {
-        delete singleton::instance;
-      }
-    }
-  };
-  static garbo gb;
+ private:
+  static Ptr instance_ptr;
+  static std::mutex m_mutex;
 };
